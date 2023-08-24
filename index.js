@@ -25,11 +25,11 @@ app.all('*', (req, res) =>{
     res.send("No route found.");
 });
 
-app.use(ErrorHandler);
-
 app.listen(port, () => {
     console.log(`React portfolio app listening on port http://localhost:${port}`)
 });
+
+app.use(ErrorHandler);
 
 process.on("unhandledRejection", (error) => {
     console.log(error.name, error.message);
